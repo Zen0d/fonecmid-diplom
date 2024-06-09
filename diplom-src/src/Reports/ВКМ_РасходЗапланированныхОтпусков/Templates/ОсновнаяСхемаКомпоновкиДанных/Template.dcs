@@ -97,7 +97,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>НАЧАЛОПЕРИОДА(&amp;Период.ДатаНачала, "День")</expression>
+		<expression>&amp;Период.ДатаНачала</expression>
 		<inputParameters>
 			<dcscor:item>
 				<dcscor:use>false</dcscor:use>
@@ -122,7 +122,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>КОНЕЦПЕРИОДА(&amp;Период.ДатаОкончания, "День")</expression>
+		<expression>&amp;Период.ДатаОкончания</expression>
 		<inputParameters>
 			<dcscor:item>
 				<dcscor:use>false</dcscor:use>
@@ -168,6 +168,8 @@
 				<dcscor:value xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d5p1:FoldersAndItemsUse">Folders</dcscor:value>
 			</dcscor:item>
 		</inputParameters>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
 	</parameter>
 	<template>
 		<name>Макет1</name>
@@ -242,9 +244,10 @@
 					</dcsset:userSettingPresentation>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>Период</dcscor:parameter>
 					<dcscor:value xsi:type="v8:StandardPeriod">
-						<v8:variant xsi:type="v8:StandardPeriodVariant">LastYear</v8:variant>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisYear</v8:variant>
 					</dcscor:value>
 					<dcsset:userSettingID>b8c6b646-e4e2-465b-9679-5a081ec11d5c</dcsset:userSettingID>
 				</dcscor:item>
